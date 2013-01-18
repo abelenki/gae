@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<title>ASCIII</title>
+	</head>
+	<style type="text/css">
+    body {
+        font-family: sans-serif; width: 800px; margin: 0 auto; padding: 10px;
+    }
+    error {
+        color: red;
+    }
+    label {
+        display: block; font-size: 20px;
+    }
+    input[type=text] {
+        width: 400px; font-size: 20px; padding: 2px;
+    }
+    textarea {
+        width: 400px; height: 200px; font-size: 17px; font-family: monospace;
+    }
+    input[type=submit] {
+        font-size: 24px;
+    }
+    hr {
+        margin: 20px auto;
+    }
+
+    .art + .art {
+        margin-top: 20px;
+    }
+    .art-title {
+        font-weight: bold; font-size: 20px;
+    }
+    .art-body {
+        margin: 0; font-size: 17px;
+    }
+</style>
+	<b>A PLACE WHERE YOU CAN POST AND SHARE YOUR ASCII DRAWINGS!!!!</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp<!-- Facebook Badge START --><br/><a href="https://www.facebook.com/ashish173" target="_TOP" title="Ashish Singh"><img src="https://badge.facebook.com/badge/100001102504651.553.200378145.png" style="border: 0px;" /></a><br/><!-- Facebook Badge END -->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href = "https://developers.google.com/appengine/"><img src="https://developers.google.com/appengine/images/appengine-silver-120x30.gif" alt="Powered by Google App Engine" /></a>
+		
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+	<p><b><i>/ascii/</i></p></p>
+	<b> FOR THOSE OF YOU WHO DON'T KNOW WHAT ASCII DRAWING IS??? --> It's a nice way to "WASTE" your time sitting in front of a computer</b>
+	
+	<br><br>
+	<form method='post'>
+		<label>
+			<div>title</div>
+			<input type="text" name="title" value="{{title}}">
+		</label>
+		
+		<label>
+			<div>art</div>
+			<textarea name="art">{{art}}</textarea>
+		</label>	
+		<div class="error">{{error}}</div>
+		<input type="submit" >
+	</form>	
+	<hr>
+	<b>SUBMISSIONS SOTRED BY SUBMISSION TIME</b>
+	{% for art in arts %}
+		<div class= "art">
+			<div class="art-title">{{art.title}}</div>
+			<pre class="art-body">{{art.art}}</pre>
+		</div>
+	{% endfor %}	
+</body>
+</html>
